@@ -75,3 +75,66 @@ button:hover {
 .result h3 {
     margin: 5px 0;
 }
+
+button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input, select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+
+    .result {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .container {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
