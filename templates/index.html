@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Customer Churn Prediction</h1>
+    <p>Enter customer details to predict churn risk</p>
+
+    <form method="POST">
+        <div class="grid">
+            <div>
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Senior Citizen</label>
+                <select name="SeniorCitizen" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Partner</label>
+                <select name="Partner" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Dependents</label>
+                <select name="Dependents" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Tenure (months)</label>
+                <input type="number" name="tenure" min="0" required>
+            </div>
+
+            <div>
+                <label>Monthly Charges</label>
+                <input type="number" step="0.01" name="MonthlyCharges" required>
+            </div>
+
+            <div>
+                <label>Total Charges</label>
+                <input type="number" step="0.01" name="TotalCharges" required>
+            </div>
+        </div>
+
+        <!-- SERVICES -->
+        <h2>Services</h2>
+
+        <div class="grid">
+            <div>
+                <label>Phone Service</label>
+                <select name="PhoneService" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Multiple Lines</label>
+                <select name="MultipleLines" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No phone service">No phone service</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Internet Service</label>
+                <select name="InternetService" required>
+                    <option value="DSL">DSL</option>
+                    <option value="Fiber optic">Fiber optic</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Online Security</label>
+                <select name="OnlineSecurity" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Online Backup</label>
+                <select name="OnlineBackup" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Device Protection</label>
+                <select name="DeviceProtection" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Tech Support</label>
+                <select name="TechSupport" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Streaming TV</label>
+                <select name="StreamingTV" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Streaming Movies</label>
+                <select name="StreamingMovies" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- BILLING -->
+        <h2>Billing</h2>
+
+        <div class="grid">
+            <div>
+                <label>Contract</label>
+                <select name="Contract" required>
+                    <option value="Month-to-month">Month-to-month</option>
+                    <option value="One year">One year</option>
+                    <option value="Two year">Two year</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Paperless Billing</label>
+                <select name="PaperlessBilling" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Payment Method</label>
+                <select name="PaymentMethod" required>
+                    <option value="Electronic check">Electronic check</option>
+                    <option value="Mailed check">Mailed check</option>
+                    <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                    <option value="Credit card (automatic)">Credit card (automatic)</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">Predict Churn</button>
+    </form>
+
+    {% if probability %}
+    <div class="result">
+        <h3>Churn Probability: {{ probability }}</h3>
+        <h3>Risk Level: {{ risk }}</h3>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
