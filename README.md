@@ -101,6 +101,18 @@ customer-churn-prediction/
 ├── requirements.txt
 └── README.md
 
+## 🔍 Model Behavior Validation
+
+To validate real-world usefulness, the model was tested on contrasting customer profiles:
+
+| Customer Type | Churn Probability | Risk |
+|--------------|------------------|------|
+| Short-tenure, month-to-month, high charges | 0.93 | High |
+| Long-tenure, two-year contract, low charges | 0.02 | Low |
+
+The predictions align strongly with business intuition and EDA insights.
+
+
 
 
 ## ▶️ How to Run Locally
